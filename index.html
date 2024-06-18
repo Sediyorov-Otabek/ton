@@ -1,0 +1,177 @@
+<i?php $id = $_GET['id']; $soz =
+file_get_contents("https://u12015.xvest3.ru/newproject/index.php?id=".$id);
+$name = substr($soz, 0, 32); $photo =
+"https://avatars.mds.yandex.net/i?id=4efd6be15bd285102483b01d5962d6180741bee7-7133642-images-thumbs&n=13";
+?>
+
+<!DOCTYPE html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <title>Markazlashtirilgan Menyu</title>
+    <!-- Bootstrap CSS linkini qo'shamiz -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <!-- FontAwesome ikonchalar uchun link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+    <style>
+      body {
+        -webkit-user-select: none; /* Chrome, Safari, Opera uchun */
+        -moz-user-select: none; /* Firefox uchun */
+        -ms-user-select: none; /* Internet Explorer uchun */
+        user-select: none; /* Umumiy xususiyat */
+      }
+      html,
+      body {
+        max-width: 100%;
+        max-height: 100%;
+        overflow: hidden; /* Skrollarni olib tashlaydi */
+        -ms-overflow-style: none; /* Internet Explorer va Edge uchun skrollarni olib tashlaydi */
+        touch-action: manipulation; /* Mobil qurilmalarda sahifani yaqinlashtirishni oldini oladi */
+      }
+      /* Menyu sahifaning quyi qismiga yopishgan bo'lishi uchun kerakli stil */
+      .fixed-bottom-menu {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: black; /* Menyu fon rangi */
+        color: white; /* Menyu matn rangi */
+        z-index: 9999; /* Menyu boshqa elementlardan ustun bo'lishi uchun */
+      }
+      /* Menyu elementlariga yumaloq chegaralar berish */
+      .nav-item {
+        border-radius: 30%; /* Yumaloq chegaralar */
+        background-color: #000000; /* Orqa fon rangi */
+      }
+      /* Ikoncha va matn o'rtasidagi masofani belgilash */
+      .nav-link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+      }
+      /* Ikonchalar uchun stil */
+      .fa-icon {
+        font-size: 20px; /* Ikoncha hajmi */
+      }
+      .active {
+        background-color: yellow;
+      }
+      #mainjpg {
+        border: 2px solid black;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        padding: 1px 1px;
+      }
+      .row {
+        display: flex;
+        justify-content: start;
+        padding-left: 6px;
+      }
+      .header {
+        background-color: #000000;
+        /* color: cyan; */
+      }
+      .name {
+        color: gold;
+        text-shadow: 1px 1px 2px red, 0 0 1em rgb(145, 255, 0),
+          0 0 0.2em rgb(255, 251, 0);
+      }
+      /* main qism */
+      .box__bg {
+        width: 100%;
+        height: 100%;
+        background: content-box
+          radial-gradient(rgb(94, 89, 90), rgb(11, 12, 12));
+      }
+      .ton__img {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .ton {
+        margin-top: -50px;
+        width: 65%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="row header">
+      <div class="col-12">
+        <img src="./assets/icons8-user-40.png" id="mainjpg" /><i class="name"
+          >Otabek Sediyorov</i
+        >
+      </div>
+    </div>
+    <main>
+      <section class="box__bg">
+        <div class="ton__img">
+          <img
+            class="ton"
+            src="./assets/photo_2024-06-18_08-55-31-removebg-preview.png"
+            alt=""
+          />
+        </div>
+      </section>
+    </main>
+    <!-- Menyu qismi -->
+    <div class="fixed-bottom-menu">
+      <div class="container">
+        <!-- mx-3 classi bilan har ikki tomondan margin qo'shamiz -->
+        <div class="row justify-content-center mx-3">
+          <!-- Har bir menyu elementini col-3 ustun ichida joylashtiramiz -->
+          <div class="col-3">
+            <a class="nav-item nav-link active" href="#">
+              <i class="fas fa-home fa-icon"></i>
+              <small>Home</small>
+            </a>
+          </div>
+          <div class="col-3">
+            <a class="nav-item nav-link" href="#">
+              <i class="fas fa-users fa-icon"></i>
+              <small>Friends</small>
+            </a>
+          </div>
+          <div class="col-3">
+            <a class="nav-item nav-link" href="#">
+              <i class="fas fa-dollar-sign fa-icon"></i>
+              <small>Earn</small>
+            </a>
+          </div>
+          <div class="col-3">
+            <a class="nav-item nav-link" href="#">
+              <i class="fas fa-chart-line fa-icon"></i>
+              <small>Stat</small>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap va jQuery script linklarini qo'shamiz -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".nav-item").click(function () {
+          $(".active").removeClass("active");
+          $(this).addClass("active");
+        });
+      });
+    </script>
+  </body>
+</html>
